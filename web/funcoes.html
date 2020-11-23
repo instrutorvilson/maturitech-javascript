@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <input type="text" id="nome" 
+                placeholder="Informe seu nome"
+                onfocus="style='background-color:red;'"
+                onblur="style='background-color:white;'"/>
+         <br />
+         <input type="number" id="idade" 
+                placeholder="Informe sua idade"
+                onfocus="style='background-color:red;'"
+                onblur="style='background-color:white;'"/>
+         <hr />        
+        <input type="button" value="Salvar" onclick="ola()" />
+        
+        <script>            
+            function ola(){
+              var nome = document.getElementById("nome").value;  
+              var idade = document.getElementById("idade").value;
+              //testa a entrada de dados
+              if(idade === ""){
+                  alert("Informe idade");
+                  document.getElementById("idade").focus();
+                  exit();
+              }
+             /* if(idade < 18){
+                window.alert("ola " + nome + " vc é menor de idade. Sem cachaça!");  
+              }else{
+                window.alert("ola " + nome + " vc é maior de idade. Cuidado com o bafometro!");  
+              }  */
+             var msg = idade < 18 ? "ola " + nome + " vc é menor de idade. Sem cachaça!" 
+                                  : "ola " + nome + " vc é maior de idade. Cuidado com o bafometro!";
+             window.alert(msg);                     
+             
+            }            
+        </script>    
+    </body>
+</html>
